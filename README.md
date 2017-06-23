@@ -5,8 +5,11 @@ Force NSLocalizedString to use a specific language
 ***Force NSLocalizedString*** to use a specific language
 
 ### How to Use ?
-Eg: Setting language to english
+
 
 ```objc
+/* 
+ * Setting language to english
+ */
 [NSBunble setLanguage:LanguageEN];
 ```
