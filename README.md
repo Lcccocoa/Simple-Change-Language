@@ -7,6 +7,6 @@ Force NSLocalizedString to use a specific language
 ### How to Use ?
 Eg: Setting language to english
 
-'''objective-c
+```objc
 [NSBunble setLanguage:LanguageEN];
-'''
+```
