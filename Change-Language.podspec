@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Change-Language"
-  s.version      = "0.0.1"
+  s.version      = "0.1"
   s.summary      = "Force NSLocalizedString to use a specific language"
   s.description  = "Simple to use, Force NSLocalizedString to use a specific language"
   s.homepage     = "https://github.com/Lcccocoa/Simple-Change-Language"
