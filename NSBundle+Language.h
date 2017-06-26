@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
+    LanguageDefault,
     LanguageCN,
     LanguageEN,
 } Language;

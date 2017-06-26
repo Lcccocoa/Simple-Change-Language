@@ -14,9 +14,11 @@
 NSString * stringWithLanguage(Language language) {
     NSString *string = nil;
     switch (language) {
+        case LanguageCN: string = @"zh-Hans";
+            break;
         case LanguageEN: string = @"en";
             break;
-        default: string = @"zh-Hans";
+        default: string = nil;
             break;
     }
     return string;
@@ -51,21 +53,28 @@ static const char _bundle = 0;
 + (void)setLanguage:(Language)language
 {
     NSString *languageStr = stringWithLanguage(language);
-    NSBundle *newBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:languageStr ofType:@"lproj"]];
+    NSBundle *newBundle = nil;
+    if (languageStr) {
+        newBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:languageStr ofType:@"lproj"]];
+    }
     objc_setAssociatedObject([NSBundle mainBundle],
                              &_bundle,
-                             languageStr ? newBundle : nil,
+                             newBundle,
                              OBJC_ASSOCIATION_RETAIN_NONATOMIC
                              );
     
-    [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:kBundleLanguageKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (languageStr) {
+        [[NSUserDefaults standardUserDefaults] setObject:languageStr forKey:kBundleLanguageKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    } else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kBundleLanguageKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 + (void)clean
 {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kBundleLanguageKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self setLanguage:LanguageDefault];
 }
 
 - (NSString *)sla_localizedStringForKey:(NSString *)key value:(NSString *)value table:(NSString *)tableName

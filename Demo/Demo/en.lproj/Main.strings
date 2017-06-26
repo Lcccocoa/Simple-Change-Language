@@ -1,0 +1,19 @@
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "NNM-UO-4iz"; */
+"NNM-UO-4iz.title" = "Root View Controller";
+
+/* Class = "UILabel"; text = "英文"; ObjectID = "ZdA-EW-EZq"; */
+"ZdA-EW-EZq.text" = "Engilish";
+
+/* Class = "UILabel"; text = "中文"; ObjectID = "dli-XC-wP1"; */
+"dli-XC-wP1.text" = "Chinese";
+
+/* Class = "UITableViewSection"; headerTitle = "切换语言"; ObjectID = "kB6-vg-jtu"; */
+"kB6-vg-jtu.headerTitle" = "Language";
+
+//##################################################################################
+//#           AutoGenStrings            2017-06-26 10:09:06
+//##################################################################################
+
+/* Class = "UILabel"; text = "系统"; ObjectID = "n2X-k2-S2L"; */
+"n2X-k2-S2L.text" = "System";
