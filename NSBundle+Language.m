@@ -83,7 +83,7 @@ static const char _bundle = 0;
     if (bundle) {
         return [bundle sla_localizedStringForKey:key value:value table:tableName];
     } else {
-        return [[NSBundle mainBundle] sla_localizedStringForKey:key value:value table:tableName];
+        return [self sla_localizedStringForKey:key value:value table:tableName];
     }
 }
 
